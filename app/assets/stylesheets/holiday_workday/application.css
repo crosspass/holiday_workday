@@ -13,3 +13,59 @@
  *= require_tree .
  *= require_self
  */
+
+  .calendar {
+    display: inline-block;
+    padding: 10px;
+    width: 33%;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+
+  .calendar table {
+    width: 100%;
+  }
+
+  .calendar table caption {
+    font-size: 24px;
+    font-weight: bolder;
+    margin: 10px;
+  }
+
+  .calendar td  {
+    text-align: center;
+  }
+
+  .calendar td a {
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .calendar td:hover {
+    background: #e9e9e9;
+  }
+  .workday {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #FFAB00;
+    margin: 0 10px;
+  }
+
+  .holiday {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #36B37E;
+    margin: 0 10px;
+  }
+  .year {
+    text-align: center;
+    margin-top: 0;
+  }
+  .text-primary {
+    color: #36B37E
+  }
+  .text-warn {
+    color: #FFAB00
+  }

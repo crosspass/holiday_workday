@@ -1,0 +1,49 @@
+<div class=''>
+  <div class=''>
+    <div class=''>
+      <h1 class=''><%= t(:label_holidays) %></h1>
+      <span class="workday"></span><span>工作日</span>
+      <span class="holiday"></span><span>节假日</span>
+    </div>
+  </div>
+</div>
+<h1 class='year'>
+<span><%= link_to '<', hwdays_path(year: @current_year.prev_year) %><span>
+<span><%= @current_year.year %>年</span>
+<span><%= link_to '>', hwdays_path(year: @current_year.next_year) %><span>
+</h1>
+<% (1..12).each do |i| %>
+<% begin_month = Date.parse("#{@current_year.year}-#{i}-1") %>
+<div class="calendar">
+  <table>
+    <caption><%= i %>月</caption>
+    <thead>
+      <tr>
+        <th>一</th>
+        <th>二</th>
+        <th>三</th>
+        <th>四</th>
+        <th>五</th>
+        <th>六</th>
+        <th>日</th>
+      <tr>
+    </thead>
+    <tbody>
+      <% HolidayWorkday::Hwday.weeks(begin_month..begin_month.at_end_of_month).each_with_index do |week, i| %>
+      <% if i == 0 && week.size < 7 %>
+      <% week.unshift(*Array.new(7 - week.size, nil)) %>
+      <% end %>
+      <tr>
+        <% week.each do |date| %>
+        <td title="点击将在工作日与节假日之间切换" data-date="<%= date %>">
+        <% if date %>
+          <%= link_to date.day, toggle_hwdays_path(date: date), method: 'post', remote: true, class: day_class(date) %>
+        <% end %>
+        </td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% end %>
