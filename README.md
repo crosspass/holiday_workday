@@ -20,22 +20,22 @@ $ bin/rails db:migrate SCOPE=holiday_workday
 ```
 mount holiday_workday
 
- ```ruby
- Rails.application.routes.draw do
-   ...
-   mount HolidayWorkday::Engine, at: "/holiday_workday"
- end
+```ruby
+Rails.application.routes.draw do
+  ...
+  mount HolidayWorkday::Engine, at: "/holiday_workday"
+end
  ```
 
 ## Usage
 
- Then go http://localhost:3000/holiday_workday toggle holiday and workday
+Then go http://localhost:3000/holiday_workday toggle holiday and workday
 
- Then you can get weeks which include workdays and exclude holidays
+Then you can get weeks which include workdays and exclude holidays
 
- ```ruby
-   HolidayWorkday::Hwday.weeks((Date.current.at_beginning_of_year..Date.current))
- ```
+```ruby
+HolidayWorkday::Hwday.weeks((Date.current.at_beginning_of_year..Date.current))
+```
 
 ## Contributing
 Contribution directions go here.
