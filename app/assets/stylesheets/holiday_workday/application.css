@@ -64,8 +64,8 @@
     margin-top: 0;
   }
   .text-primary {
-    color: #36B37E
+    color: #36B37E !important;
   }
   .text-warn {
-    color: #FFAB00
+    color: #FFAB00 !important;
   }
