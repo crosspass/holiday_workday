@@ -15,7 +15,7 @@ module HolidayWorkday
       if holiday_workday.destroyed?
         date.sunday? || date.saturday? ? 'text-primary' : 'text-warn'
       else
-        date.sunday? || date.saturday? ? 'text-warn' : 'text-primay'
+        date.sunday? || date.saturday? ? 'text-warn' : 'text-primary'
       end
     end
   end
