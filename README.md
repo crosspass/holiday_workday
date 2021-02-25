@@ -1,6 +1,8 @@
 # HolidayWorkday
 Setting holiday and workday, then get weeks exclude holiday but include workday. Saturday and Sunday default is holiday.
 
+[Demo](http://139.198.180.2/holiday_workday)
+
 ## Installation
 Add this line to your application's Gemfile:
 
