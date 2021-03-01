@@ -10,23 +10,14 @@ module HolidayWorkday
     end
 
     ##
-    # POST /holidy
+    # POST /holiday_workday/toggle
     def toggle
       @holiday_workday = Hwday.find_by(date: params[:date])
       if @holiday_workday
-        if @holiday_workday.date.sunday? || @holiday_workday.date.saturday?
-          @holiday_workday.workday? ? @holiday_workday.destroy : @holiday_workday.workday!
-        else
-          @holiday_workday.holiday? ? @holiday_workday.destroy : @holiday_workday.holiday!
-        end
+        @holiday_workday.destroy
       else
         date = Date.parse(params[:date])
-        @holiday_workday =
-          if date.sunday? || date.saturday?
-            Hwday.workday.create(date: date)
-          else
-            Hwday.holiday.create(date: date)
-          end
+        @holiday_workday = Hwday.workday.create(date: date)
       end
     rescue StandardError => e
       @e = e
