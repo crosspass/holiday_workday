@@ -34,6 +34,7 @@ zh-CN:
     label_holiday_workday: 节假日和工作日
     label_holiday: 节假日
     label_workday: 工作日
+    label_year: 年
     day_title: 击将在工作日与节假日之间切换
     monday:  一
     tuesday: 二
@@ -42,15 +43,16 @@ zh-CN:
     friday: 五
     saturday: 六
     sunday: 日
-    january: 1月
-    february: 2月
-    march: 3月
-    april: 4月
-    may: 5月
-    june: 6月
-    july: 7月
-    august: 8月
-    september: 9月
-    october: 10月
-    november: 11月
-    december: 12月
+    month:
+      1: 1月
+      2: 2月
+      3: 3月
+      4: 4月
+      5: 5月
+      6: 6月
+      7: 7月
+      8: 8月
+      9: 9月
+      10: 10月
+      11: 11月
+      12: 12月

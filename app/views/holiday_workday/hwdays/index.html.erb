@@ -1,31 +1,31 @@
 <div class=''>
   <div class=''>
     <div class=''>
-      <h1 class=''><%= t(:label_holiday_workday) %></h1>
-      <span class="holiday"></span><span><%= t(:label_holiday) %></span>
-      <span class="workday"></span><span><%= t(:label_workday) %></span>
+      <h1 class=''><%= t('holiday_workday.label_holiday_workday') %></h1>
+      <span class="holiday"></span><span><%= t('holiday_workday.label_holiday') %></span>
+      <span class="workday"></span><span><%= t('holiday_workday.label_workday') %></span>
     </div>
   </div>
 </div>
 <h1 class='year'>
 <span><%= link_to '<', hwdays_path(year: @current_year.prev_year), class: 'year-nav' %><span>
-<span><%= @current_year.year %>年</span>
+<span><%= @current_year.year %><%= t('holiday_workday.label_year')%></span>
 <span><%= link_to '>', hwdays_path(year: @current_year.next_year), class: 'year-nav' %><span>
 </h1>
 <% (1..12).each do |i| %>
 <% begin_month = Date.parse("#{@current_year.year}-#{i}-1") %>
 <div class="calendar">
   <table>
-    <caption><%= i %>月</caption>
+    <caption><%=t("holiday_workday.month.#{i}") %></caption>
     <thead>
       <tr>
-        <th><%= t(:monday) %></th>
-        <th><%= t(:tuesday) %></th>
-        <th><%= t(:wednesday) %></th>
-        <th><%= t(:thursday) %></th>
-        <th><%= t(:friday) %></th>
-        <th><%= t(:saturday) %></th>
-        <th><%= t(:sunday) %></th>
+        <th><%= t('holiday_workday.monday') %></th>
+        <th><%= t('holiday_workday.tuesday') %></th>
+        <th><%= t('holiday_workday.wednesday') %></th>
+        <th><%= t('holiday_workday.thursday') %></th>
+        <th><%= t('holiday_workday.friday') %></th>
+        <th><%= t('holiday_workday.saturday') %></th>
+        <th><%= t('holiday_workday.sunday') %></th>
       <tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@
       <% end %>
       <tr>
         <% week.each do |date| %>
-        <td title="<%= t(:day_title)%>" data-date="<%= date %>">
+        <td title="<%= t('holiday_workday.day_title')%>" data-date="<%= date %>">
         <% if date %>
           <%= link_to date.day, toggle_hwdays_path(date: date), method: 'post', remote: true, class: day_class(date) %>
         <% end %>

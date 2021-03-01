@@ -30,15 +30,29 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  label_holiday_workday: Holiday and Workday
-  label_holiday: holiday
-  label_workday: workday
-  day_title: click day will toggle between holiday and workday
-  monday: MO
-  tuesday: TU
-  wednesday: WE
-  thursday: TH
-  friday: FR
-  saturday: SA
-  sunday: SU
+  holiday_workday:
+    label_holiday_workday: Holiday and Workday
+    label_holiday: holiday
+    label_workday: workday
+    label_year: ''
+    day_title: click day will toggle between holiday and workday
+    monday: MO
+    tuesday: TU
+    wednesday: WE
+    thursday: TH
+    friday: FR
+    saturday: SA
+    sunday: SU
+    month:
+      1: January
+      2: February
+      3: March
+      4: April
+      5: May
+      6: June
+      7: July
+      8: August
+      9: September
+      10: October
+      11: November
+      12: December
