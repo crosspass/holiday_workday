@@ -7,7 +7,7 @@ Setting holiday and workday, then get weeks exclude holiday but include workday.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'holiday_workday'
+gem 'holiday_workday', github: "crosspass/holiday_workday", branch: 'main'
 ```
 
 And then execute:
