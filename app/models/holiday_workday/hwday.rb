@@ -31,5 +31,9 @@ module HolidayWorkday
       end
       weeks
     end
+
+    def weekend?
+      date.saturday? || date.sunday?
+    end
   end
 end

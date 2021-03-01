@@ -3,19 +3,16 @@ module HolidayWorkday
     def day_class(date)
       return '' unless date
 
-      if date.sunday? || date.saturday?
-        @workdays.include?(date) ? 'text-warn' : 'text-primary'
-      else
-        @holidays.include?(date) ? 'text-primary' : 'text-warn'
-      end
+      return 'bg-warn' if @workdays.include?(date) 
+      return 'bg-primary' if @holidays.include?(date)
+      return 'text-primary' if date.saturday? || date.sunday?
     end
 
     def toggle_date_class(holiday_workday)
-      date = holiday_workday.date
       if holiday_workday.destroyed?
-        date.sunday? || date.saturday? ? 'text-primary' : 'text-warn'
+        holiday_workday.weekend? ? 'text-primary' : ''
       else
-        date.sunday? || date.saturday? ? 'text-warn' : 'text-primary'
+        holiday_workday.holiday? ? 'bg-primary' : 'bg-warn'
       end
     end
   end
