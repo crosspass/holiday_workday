@@ -6,8 +6,16 @@ Setting holiday and workday, then get weeks exclude holiday but include workday.
 ## Installation
 Add this line to your application's Gemfile:
 
+Rails6
+
 ```ruby
 gem 'holiday_workday', github: "crosspass/holiday_workday", branch: 'main'
+```
+
+Rails4
+
+```ruby
+gem 'holiday_workday', github: "crosspass/holiday_workday", branch: 'rails4'
 ```
 
 And then execute:
