@@ -12,6 +12,10 @@ module HolidayWorkday
       holiday.where(date: range).pluck(:date)
     end
 
+    def self.worked_days(range)
+      (range.reject{|x| x.sunday? || x.saturday?} - holidays(range) + workdays(range)).uniq
+    end
+
     def self.weeks(range)
       weeks = []
       week_start = range.first
