@@ -1,4 +1,4 @@
-class CreateHolidayWorkdayHwdays < ActiveRecord::Migration[6.0]
+class CreateHolidayWorkdayHwdays < ActiveRecord::Migration]
   def change
     create_table :holiday_workday_hwdays do |t|
       t.date :date
