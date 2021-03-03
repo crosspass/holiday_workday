@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Holiday workday</title>
+  <title>HolidayWorkday</title>
+  <%= stylesheet_link_tag    "holiday_workday/application", media: "all" %>
+  <%= javascript_include_tag "holiday_workday/application" %>
   <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
-
- <%= stylesheet_link_tag    "holiday_workday/application", media: "all" %>
- <%= javascript_include_tag    "holiday_workday/application", media: "all" %>
 </head>
 <body>
 
 <%= yield %>
-<%= render 'layouts/holiday_workday/loading' %>
+
 </body>
 </html>

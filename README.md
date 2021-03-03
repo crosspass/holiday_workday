@@ -17,8 +17,8 @@ $ bundle
 
 install engin
 ```bash
-$ bin/rails holiday_workday:install:migrations
-$ bin/rails db:migrate SCOPE=holiday_workday
+$ bin/rake holiday_workday:install:migrations
+$ bin/rake db:migrate SCOPE=holiday_workday
 ```
 mount holiday_workday
 

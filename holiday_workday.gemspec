@@ -1,32 +1,25 @@
-$:.push File.expand_path("lib", __dir__)
+$:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
 require "holiday_workday/version"
 
 # Describe your gem and declare its dependencies:
-Gem::Specification.new do |spec|
-  spec.name        = "holiday_workday"
-  spec.version     = HolidayWorkday::VERSION
-  spec.authors     = ["iiithinking"]
-  spec.email       = ["wuyingchao1@gamil.com"]
-  spec.homepage    = "https://github.com/crosspass/holiday_workday"
-  spec.summary     = "Configure holiday and workday"
-  spec.description = "Configure holiday and workday, then retrieve them"
-  spec.license     = "MIT"
+Gem::Specification.new do |s|
+  s.name        = "holiday_workday"
+  s.version     = HolidayWorkday::VERSION
+  s.authors     = ["wuyingchao"]
+  s.email       = ["wuyingchao@meizu.com"]
+  s.homepage    = "https://github.com/crosspass"
+  s.summary     = "HolidayWorkday set holiday and workday"
+  s.description = "Set holiday "
+  s.license     = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.add_dependency "rails", "~> 4.0"
+  s.add_dependency 'jquery-rails'
 
-  spec.add_dependency "rails"#, "~> 6.0.2", ">= 6.0.2.1"
-  spec.add_dependency 'jquery-rails'
 
-  spec.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3"
 end
