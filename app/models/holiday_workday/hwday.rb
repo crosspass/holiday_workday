@@ -66,7 +66,7 @@ module HolidayWorkday
     private
 
     def set_day_type
-      self.day_type = weekend? ? :worday : :holiday
+      self.day_type = weekend? ? :workday : :holiday
     end
   end
 end
