@@ -2,7 +2,7 @@ module HolidayWorkday
   class Hwday < ApplicationRecord
     validates :date, uniqueness: true, presence: true
     enum day_type: %i[holiday workday]
-    after_create :set_day_type
+    before_create :set_day_type
 
     def self.workdays(range)
       workday.where(date: range).pluck(:date)
@@ -43,7 +43,7 @@ module HolidayWorkday
     private
 
     def set_day_type
-      weekend? ? self.day_type  = :workday : self.day_type = :holiday
+      self.day_type = weekend? ? :worday : :holiday
     end
   end
 end
