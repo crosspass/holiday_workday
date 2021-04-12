@@ -19,7 +19,6 @@ module HolidayWorkday
     def self.weeks(range)
       weeks = []
       week_start = range.first
-      week_start = week_start.at_end_of_week.next_day if week_start.sunday? || week_start.saturday?
       return weeks if week_start > range.last
 
       week_end = week_start.at_end_of_week
