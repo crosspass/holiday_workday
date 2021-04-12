@@ -3,7 +3,7 @@ module HolidayWorkday
     def day_class(date)
       return '' unless date
 
-      return 'bg-warn' if @workdays.include?(date) 
+      return 'bg-warn' if @workdays.include?(date)
       return 'bg-primary' if @holidays.include?(date)
       return 'text-primary' if date.saturday? || date.sunday?
     end
