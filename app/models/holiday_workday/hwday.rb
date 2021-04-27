@@ -48,9 +48,9 @@ module HolidayWorkday
         break if week_start > range.last
 
         week_end = range.last if week_end > range.last
-        week = (week_start..week_end).reject{|x| x.sunday? || x.saturday?}
+        weekends, week = (week_start..week_end).partition { |x| x.sunday? || x.saturday? }
 
-        week = week - holidays + workdays
+        week = week - holidays + (weekends & workdays)
         weeks << week if week.present?
         break if week_end == range.last
         week_start = week_end.next_day
