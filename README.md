@@ -45,6 +45,8 @@ Then you can get weeks which include workdays and exclude holidays
 
 ```ruby
 HolidayWorkday::Hwday.weeks((Date.current.at_beginning_of_year..Date.current))
+HolidayWorkday::Hwday.holidays((Date.current.at_beginning_of_year..Date.current))
+HolidayWorkday::Hwday.worked_days((Date.current.at_beginning_of_year..Date.current))
 ```
 
 ## Contributing
